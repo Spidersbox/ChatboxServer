@@ -18,7 +18,8 @@ class ChatterBoxServer : public QTcpServer
     void readyRead();
     void disconnected();
     void sendUserList();
-    void sendMessages();
+    void sendMessages(QString,QTcpSocket*);
+    void dbAdd(QString,QString);
 
   protected:
     void incomingConnection(int socketfd);
@@ -26,7 +27,6 @@ class ChatterBoxServer : public QTcpServer
   private:
     QSet<QTcpSocket*> clients;
     QMap<QTcpSocket*,QString> users;
-    QString messages;
 };
 
 #endif

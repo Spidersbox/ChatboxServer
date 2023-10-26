@@ -6,6 +6,7 @@ INCLUDEPATH +=src
 CONFIG +=console
 
 QT +=network
+QT += sql
 
 OBJECTS_DIR = src/obj
 MOC_DIR = src/obj
